@@ -31,17 +31,19 @@ CREATE TABLE IF NOT EXISTS Jobs (
     PRIMARY KEY (JobID)
 );
 CREATE TABLE IF NOT EXISTS Certifications (
-	FOREIGN KEY(StaffID) REFERENCES Staff(StaffID),
+	StaffID SMALLINT
     Cert VARCHAR(64),
     Completed DATE,
-    PRIMARY KEY (StaffID, Completed)
+    PRIMARY KEY (StaffID, Completed),
+    FOREIGN KEY(StaffID) REFERENCES Staff(StaffID)
 );
 CREATE TABLE IF NOT EXISTS EmploymentExperience (
-	FOREIGN KEY(StaffID) REFERENCES Staff(StaffID),
+	StaffID SMALLINT,	
     Job VARCHAR(64),
     StartDate DATE,
     EndDate DATE,
-    PRIMARY KEY(StaffID, EndDate)
+    PRIMARY KEY(StaffID, EndDate),
+    FOREIGN KEY(StaffID) REFERENCES Staff(StaffID),
 );
 /*
 * Not sure if this goes here. *Figure out later*
