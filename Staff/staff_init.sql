@@ -4,21 +4,20 @@
 * Initialize Staff tables 
 */
 
-
 USE HOSPITAL;
 	
 CREATE TABLE IF NOT EXISTS Ward (
-	WardID SMALLINT NOT NULL,
+	WardID SMALLINT PRIMARY KEY,
 	WardName VARCHAR(64),
     TotalBeds SMALLINT,
-    BedsInUse SMALLINT,
-    PRIMARY KEY (WardID)
+    BedsInUse SMALLINT
 );
 
 CREATE TABLE IF NOT EXISTS Staff (
 	StaffID SMALLINT NOT NULL,
     StaffLastName VARCHAR(64) NOT NULL,
     StaffFirstName VARCHAR(64) NOT NULL,
+    WardID SMALLINT,
     JobTitle VARCHAR(128),
     PRIMARY KEY (StaffID),
     FOREIGN KEY (WardID) REFERENCES Ward(WardID)
@@ -31,7 +30,7 @@ CREATE TABLE IF NOT EXISTS Jobs (
     PRIMARY KEY (JobID)
 );
 CREATE TABLE IF NOT EXISTS Certifications (
-	StaffID SMALLINT
+	StaffID SMALLINT,
     Cert VARCHAR(64),
     Completed DATE,
     PRIMARY KEY (StaffID, Completed),
@@ -43,7 +42,7 @@ CREATE TABLE IF NOT EXISTS EmploymentExperience (
     StartDate DATE,
     EndDate DATE,
     PRIMARY KEY(StaffID, EndDate),
-    FOREIGN KEY(StaffID) REFERENCES Staff(StaffID),
+    FOREIGN KEY(StaffID) REFERENCES Staff(StaffID)
 );
 /*
 * Not sure if this goes here. *Figure out later*

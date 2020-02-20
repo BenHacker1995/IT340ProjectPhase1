@@ -4,6 +4,7 @@
 * Initialize Hospital Database
 */
 
-CREATE DATABASE IF NOT EXISTS HOSPITAL;
+-- Hospital can be changed to "whatever" I don't really care.
+CREATE DATABASE HOSPITAL;
 USE HOSPITAL;
 
