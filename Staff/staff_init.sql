@@ -53,14 +53,3 @@ CREATE TABLE IF NOT EXISTS StaffPay (
     PRIMARY KEY (StaffID,JobTitle),
     FOREIGN KEY (StaffID) REFERENCES Staff(StaffID)    
 );
-/*
-* Not sure if this goes here. *Figure out later*
-CREATE TABLE IF NOT EXISTS LocalDoctors (
-	ClinicID SMALLINT,
-    ClinicName VARCAR(128),
-    DoctorID SMALLINT,
-    DoctorLastName VARCHAR(64),
-    DoctorFirstName VARCHAR(64),
-    PRIMARY KEY (DoctorID)
-);
-*/
