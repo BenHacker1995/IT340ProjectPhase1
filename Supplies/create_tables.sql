@@ -10,10 +10,11 @@ Work Log:
     Entry 1::
 		2020-02-14	Nathan Langenfeld
 */
+/*
 DROP DATABASE wellmedows;
 CREATE DATABASE wellmedows;
 USE wellmedows;
-
+*/
 
 CREATE TABLE IF NOT EXISTS Suppliers
 (
